@@ -4,14 +4,84 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Siti Jumariyah</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+   <meta Property="og:url" content="{{ asset('') }}">
 
+    @if (Request::segment(1) == '')
+    <meta property="og:type" content="article"/>
+    @if ($global_option != '0')
+    @if ($global_option->logo)
+    <meta property="og:image" content="{{ $global_option->imageThumbUrl }}" />
+    @endif
+    @if ($global_option->webname)
+    <meta property="og:title" content="{{ $global_option->webname }}"/>
+    @else
+    <meta name="og:title"
+    content="Sekolah Nusantara">
+    @endif
+    @if ($global_option->meta_description)
+    <meta name="description" content="{{ $global_option->meta_description }}">
+    @else
+    <meta name="description"
+    content="Digital Nusantara, Digital Nusantara Borneo, Borneo, Digital, Nusantara, Kaltim">
+    @endif
 
-    <link  href="{{asset('')}}assets/frontend/ksp2/img/favicon.png" rel="icon">
-    <link  href="{{asset('')}}assets/frontend/ksp2/img/apple-touch-icon.png" rel="apple-touch-icon">
+    @if ($global_option->meta_keywords)
+    <meta name="keywords" content="{{ $global_option->meta_keywords }}">
+    @else
+    <meta name="keywords"
+    content="Digital Nusantara, Digital Nusantara Borneo, Borneo, Digital, Nusantara, Kaltim">
+    @endif
+    @if ($global_option->favicon)
+    <link rel="icon" href="{{ asset('') }}uploads/images/logo/{{ $global_option->favicon }}" rel="icon">
+    @else
+    <link rel="icon" href="{{ asset('') }}uploads/images/logo/favicon.png" rel="icon">
+    @endif
+    @elseif ($global_option == '0')
+    <meta name="description" content="Digital Nusantara, Digital Nusantara Borneo, Borneo, Digital, Nusantara, Kaltim">
+    <meta name="keywords" content="Kodir Zaelani, digital nusantara, digtal ">
+    <link rel="icon" href="{{ asset('') }}uploads/images/logo/favicon.png">
+    @endif
+    @elseif (Request::segment(1) == 'posts-detail')
+    {{-- {{ Request::segment(1) }} --}}
 
+    <meta property="og:title" content="{{ $global_option->webname }}"/>
+    <meta name="description" content="{{$post->created_at}}" />
+    <meta property="og:title" content="{{ $post->title }}" />
+    <meta name="description" content="{{ $global_option->meta_description }}" />
+    <meta property="og:url" content="{{ asset('') }}posts/detail/{{ $post->slug }}" />
+    @if ($post->image)
+    <meta property="og:image" content="{{ $post->imageUrl }}" />
+    @else
+    <meta property="og:image" content="{{ asset('assets/icons/ic-logo.png')}}" />
+    @endif
+    <meta property="og:type" content="article" />
+
+    <title>{{ $post->title }}</title>
+    @endif
+
+    @if ($global_option != '0')
+
+    @if ($global_option->meta_description)
+    <meta name="description" content="{{ $global_option->meta_description }}">
+    @else
+    <meta name="description" content="Digital Nusantara, Digital Nusantara Borneo, Borneo, Digital, Nusantara, Kaltim">
+    @endif
+
+    @if ($global_option->meta_keywords)
+    <meta name="keywords" content="{{ $global_option->meta_keywords }}">
+    @else
+    <meta name="keywords" content="Digital Nusantara, Digital Nusantara Borneo, Borneo, Digital, Nusantara, Kaltim">
+    @endif
+    @if ($global_option->favicon)
+    <link rel="icon" href="{{ asset('') }}uploads/images/logo/{{ $global_option->favicon }}" rel="icon">
+    @else
+    <link rel="icon" href="{{ asset('') }}uploads/images/logo/favicon.png" rel="icon">
+    @endif
+    @elseif ($global_option == '0')
+    <meta name="description" content="Digital Nusantara, Digital Nusantara Borneo, Borneo, Digital, Nusantara, Kaltim">
+    <meta name="keywords" content="Kodir Zaelani, digital nusantara, digtal ">
+    <link rel="icon" href="{{ asset('') }}uploads/images/logo/favicon.png">
+    @endif
 
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>

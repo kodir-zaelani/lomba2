@@ -37,7 +37,7 @@
                                     <div class="form-group @error('sekolah_id') has-error @enderror">
                                         <h5 >Satuan Pendidikan <span class="text-danger">*</span></h5>
                                         <select class="form-control select2" style="width: 100%;" name="sekolah_id" required>
-                                            <option value="" holder>Satuan Pendidikan</option>
+                                            <option value="" holder>Pilih Satuan Pendidikan</option>
                                             @foreach ($sekolah as $item)
                                             <option value="{{ $item->id }}" {{ old('sekolah_id') == $item->id ? 'selected' : '' }}
                                                 @if ($item->id == $spbinaan->sekolah_id) selected @endif>
@@ -56,7 +56,7 @@
                                     <div class="form-group @error('jenjangpendidikan_id') has-error @enderror">
                                         <h5 >Jenjang Pendidikan <span class="text-danger">*</span></h5>
                                         <select class="form-control select2" style="width: 100%;" name="jenjangpendidikan_id" required>
-                                            <option value="" holder>Jenjang Pendidikan</option>
+                                            <option value="" holder>Pilih Jenjang Pendidikan</option>
                                             @foreach ($datajenjangpendidikan as $item)
                                             <option value="{{ $item->id }}" {{ old('jenjangpendidikan_id') == $item->id ? 'selected' : '' }}
                                                 @if ($item->id == $spbinaan->jenjangpendidikan_id) selected @endif>

@@ -62,7 +62,7 @@
                                     <option value="" holder>Select Jenis PTK</option>
                                     @foreach ($jenisptks as $item)
                                     <option value="{{ $item->id }}" {{ old('jenisptk_id') == $item->id ? 'selected' : '' }} @if ($item->id == $pegawai->jenisptk_id) selected @endif>
-                                        {{ $item->jenis_pegawai }}
+                                        {{ $item->jenis_ptk }}
                                     </option>
                                     @endforeach
                                 </select>

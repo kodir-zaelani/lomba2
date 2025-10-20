@@ -27,7 +27,7 @@ class BinaanController extends Controller
             'sekolah' => Sekolah::orderBy('nama', 'asc')->get(),
             'dukungan' => Dukungan::orderBy('created_at', 'asc')->get(),
             'datajenjangpendidikan' => Jenjangpendidikan::orderBy('jenjang_pendidikan_id', 'asc')->get(),
-            'title' => 'Pendampingan Create',
+            'title' => 'Pendampingan',
         ]);
     }
 
@@ -71,7 +71,7 @@ class BinaanController extends Controller
             'sekolah' => Sekolah::orderBy('nama', 'asc')->get(),
             'dukungan' => Dukungan::orderBy('created_at', 'asc')->get(),
             'datajenjangpendidikan' => Jenjangpendidikan::orderBy('jenjang_pendidikan_id', 'asc')->get(),
-            'title' => 'Binaan Edit',
+            'title' => 'Pendampingan',
         ]);
     }
 

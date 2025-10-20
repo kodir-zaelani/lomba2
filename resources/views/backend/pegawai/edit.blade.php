@@ -60,7 +60,7 @@
                                 <label class="form-label">Jenis PTK <span class="text-danger">*</span></label>
                                 <select class="form-control select" style="width: 100%;" name="jenispegawai_id">
                                     <option value="" holder>Select Jenis PTK</option>
-                                    @foreach ($jenispegawais as $item)
+                                    @foreach ($jenisptks as $item)
                                     <option value="{{ $item->id }}" {{ old('jenispegawai_id') == $item->id ? 'selected' : '' }} @if ($item->id == $pegawai->jenispegawai_id) selected @endif>
                                         {{ $item->jenis_pegawai }}
                                     </option>

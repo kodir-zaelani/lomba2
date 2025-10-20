@@ -181,7 +181,7 @@ class Index extends Component
        $post->update($data);
        session()->flash('warning', 'Pegawai Change to InAcctive was successfully');
 
-       return redirect()->to('backend/pegawais/index');
+       return redirect()->to('backend/pegawai/index');
     }
     public function changeActive()
     {
@@ -191,7 +191,7 @@ class Index extends Component
 
        $post->update($data);
        session()->flash('success', 'Pegawai Change to Active was successfully');
-       return redirect()->to('backend/pegawais/index');
+       return redirect()->to('backend/pegawai/index');
     }
     public function deleteRecords()
     {

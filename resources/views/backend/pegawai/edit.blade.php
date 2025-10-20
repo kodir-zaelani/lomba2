@@ -56,17 +56,17 @@
                                 </div>
                                 @enderror
                             </div>
-                            <div class="form-group @error('jenispegawai_id') has-error @enderror">
+                            <div class="form-group @error('jenisptk_id') has-error @enderror">
                                 <label class="form-label">Jenis PTK <span class="text-danger">*</span></label>
-                                <select class="form-control select" style="width: 100%;" name="jenispegawai_id">
+                                <select class="form-control select" style="width: 100%;" name="jenisptk_id">
                                     <option value="" holder>Select Jenis PTK</option>
                                     @foreach ($jenisptks as $item)
-                                    <option value="{{ $item->id }}" {{ old('jenispegawai_id') == $item->id ? 'selected' : '' }} @if ($item->id == $pegawai->jenispegawai_id) selected @endif>
+                                    <option value="{{ $item->id }}" {{ old('jenisptk_id') == $item->id ? 'selected' : '' }} @if ($item->id == $pegawai->jenisptk_id) selected @endif>
                                         {{ $item->jenis_pegawai }}
                                     </option>
                                     @endforeach
                                 </select>
-                                @error('jenispegawai_id')
+                                @error('jenisptk_id')
                                 <span class="help-block"><strong>{{ $message }}</strong></span>
                                 @enderror
                             </div>
